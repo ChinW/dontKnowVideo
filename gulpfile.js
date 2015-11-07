@@ -47,7 +47,7 @@ gulp.task("scripts",function(){
 	gulp.src(src_scripts+"/**/*.js")
 	.pipe(jshint())
 	.pipe(jshint.reporter("default"))
-	.pipe(concat("all.js"))
+	// .pipe(concat("all.js"))
 	.pipe(rename({suffix:".min"}))
 	.pipe(gulp.dest(dest_scripts))
 	.pipe(notify({message:"scripts complete"}));

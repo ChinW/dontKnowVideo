@@ -91,10 +91,51 @@ function renderStatus(statusText) {
   document.getElementById('status').textContent = statusText;
 }
 
+function isBaidu(url) {
+  if ( "baidu.com" == url.substring(12,21) ) {
+    return "yes";
+  }else {
+    return "no";
+  }
+  
+  //return url.substring(12,21);
+}
+
+var keywords = new Array();
+
+function isContainKeyWords(url) {
+  
+  //document.getElementById('searchFlag').textContent = "isBaidu == "+decodeURI(url);
+  
+  for(var i=0;i<keywords.length;i++){
+    
+    if(decodeURI(url).indexOf(keywords[i]) > 0 ){
+      return true;
+    }
+  }
+  
+  return false;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
     // Put the image URL in Google search.
-    renderStatus('Performing Google Image search for ' + url);
+  
+  /////////////////init///////////////////////////
+  keywords.push("午夜凶铃");
+  keywords.push("唐伯虎点秋香");
+  keywords.push("guanjianzi");
+  
+    renderStatus('This url is ' + url);
+  ////////////////////////////////////////////////
+  
+  document.getElementById('searchFlag').textContent = "isBaidu == "+isBaidu(url);
+  
+  if(true == isContainKeyWords(url)) {
+    document.getElementById('searchRes').textContent = "搜到啦";
+  }else{
+    document.getElementById('searchRes').textContent = "木有搜到";
+  }
 
     getImageUrl(url, function(imageUrl, width, height) {
 

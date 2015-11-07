@@ -8,3 +8,29 @@
 .ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before{
 	background-color:#0CBC3D!important;
 }
+.suspend{
+	z-index:999;
+	// background:rgba(0,0,0,0.3);
+	width:100%;
+	height:100vh;
+	position:fixed;
+	top:0;
+	img,video{
+		width:auto;
+		opacity: 0.5;
+		height:100vh;
+	}
+}
+#BMV_BG{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -999;
+	video{
+		width:auto;
+		height:100vh;
+		opacity:0.5
+	}
+}
