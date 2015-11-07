@@ -21,7 +21,7 @@ function saveRepeatModeChanges() {
     }
     chrome.storage.local.set({'repeatMode': theValue}, function() {
       // 通知保存完成。
-      // $("#status").html("设置已经保存:"+theValue);
+      $("#status").html("设置已经保存:"+theValue);
     });
 }
 $(function(){
@@ -49,9 +49,9 @@ $(function(){
     });
 
     chrome.storage.local.get('repeatMode', function (result) {
-        videoMode = result.videoMode;
-        if(videoMode){
-         	$("#status").html("repeatMode:"+videoMode);
+        repeatMode = result.repeatMode;
+        if(repeatMode){
+         	$("#status").html("repeatMode:"+repeatMode);
         	$("#repeatMode-checkbox").checkbox('check');
         }
     });
