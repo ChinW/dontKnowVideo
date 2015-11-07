@@ -1,66 +1,5 @@
-// var filepath = "resource/legalhigh/legal_high_ep01 ",
-//     fileExtension = ".jpg",
-//     filesCount = 275,
-//     startIndex = 1,
-//     currentIndex = startIndex,
-//     speed = 33,
-//     imgTarget = "#gif";
-// var format = function(number, form) {
-//     var forms = form.split('.'),
-//         number = '' + number,
-//         numbers = number.split('.'),
-//         leftnumber = numbers[0].split(''),
-//         exec = function(lastMatch) {
-//             if (lastMatch == '0' || lastMatch == '#') {
-//                 if (leftnumber.length) {
-//                     return leftnumber.pop();
-//                 } else if (lastMatch == '0') {
-//                     return lastMatch;
-//                 } else {
-//                     return '';
-//                 }
-//             } else {
-//                 return lastMatch;
-//             }
-//         },
-//         string
+var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4","午夜凶铃":"wyxl.mp4","奇幻森林":"jungle.mp4","敲门":"yonimo_r.mp4"};
 
-//     string = forms[0].split('').reverse().join('').replace(/./g, exec).split('').reverse().join('');
-//     string = leftnumber.join('') + string;
-
-//     if (forms[1] && forms[1].length) {
-//         leftnumber = (numbers[1] && numbers[1].length) ? numbers[1].split('').reverse() : [];
-//         string += '.' + forms[1].replace(/./g, exec);
-//     }
-//     return string.replace("//.$/", '');
-// };
-
-// function runVideo(currentIndex, total, path, extension) {
-//     var name = path + format(currentIndex, "000") + extension;
-//     // console.log(name);
-//     // console.log(chrome.extension.getURL(name));
-//     $(imgTarget).attr("src", chrome.extension.getURL(name));
-//     if (currentIndex < total) {
-//         currentIndex++;
-//         setTimeout("runVideo(" + currentIndex + "," + total + ",'" + path + "','" + extension + "')", speed);
-//     }else{
-//     	$("#suspend").remove();
-//     }
-// }
-
-// $(function(){
-// 	// alert(1);
-// 	$("#container").append(
-// 		$("<div></div>").addClass("suspend").attr("id","suspend").append(
-// 			$("<img>").attr("id","gif")
-// 		)
-// 	);
-// 	// console.log("hi("+currentIndex+","+filesCount+",'"+filepath+"','"+fileExtension+"')");
-// 	setTimeout("runVideo("+currentIndex+","+filesCount+",'"+filepath+"','"+fileExtension+"')",speed);
-// });
-// 
-// 
-var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4"};
 var mode = 1;//1:background 显示 2:覆盖显示
 
 function getVideoMode(){
@@ -89,7 +28,12 @@ console.log(mode);
 console.log(allowWords);
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-        if (last != request.keyword) {
+	chrome.storage.local.get('list', function (result) { //获取列表
+		var list = result.list;
+		if(list !== undefined){
+			allowWords = eval("("+list+")");
+		}
+		if (last != request.keyword) {
 			last = request.keyword;
 			console.log(last);
 			console.log(allowWords[request.keyword]);
@@ -106,7 +50,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 								console.log("nnnn");
 								videoMode();
 								//添加到steps
-								saveSteps({last:"1"});
+								var arr = {};
+								arr[last] = 1;
+								saveSteps(arr);
 							}else{
 								steps = eval("(" + steps + ")"); //tranform to json
 								console.log(steps);
@@ -126,6 +72,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 				});
 			}
 		}
+	});
 });
 //
 function saveSteps(arr) {
