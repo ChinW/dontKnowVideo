@@ -1,5 +1,3 @@
 $(function(){
-	$(".title").bind("click",function(){
-	  console.log(1)
-	});
+	$('.ui.checkbox').checkbox();
 })

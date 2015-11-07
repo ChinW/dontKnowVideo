@@ -6,62 +6,60 @@
  -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <script src="assets/js/jquery-1.11.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-      <script src="global.js"></script>
-    <script src="popup.js"></script>
+    <title>Dont Know Video</title>
+    <link rel="stylesheet" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/global.min.css">
   </head>
   <body>
-    <a href="http://www.baidu.com" class="btn btn-primary" >Halo</a>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="ui attached message">
+      <div class="header">Dont Know Video</div>
+      <p>让您在搜索影视资源时更佳有趣</p>
     </div>
-  </div>
-</div>
-    <h1 class="title">Hi,how are you?</h1>
-    <a class="title">halo</a>
+    <form action="" class="ui form attached fluid segment">
+    <div class="two fields">
+      <div class="fields">
+        <div class="field">
+          <div class="ui toggle checkbox checked">
+            <input type="checkbox" name="gift" tabindex="0" class="hidden">
+            <label>每次搜索重复显示视频</label>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <h4 class="ui header">已经探索 1,048部</h4>
+        <div class="ui buttons">
+          <button class="ui button red basic">清除</button>
+          <div class="or"></div>
+          <button class="ui button green basic">查看足迹</button>
+        </div>
+      </div>
+      </div>
+    </form>
+    <form class="ui form attached fluid segment">
+      <div class="two fields">
+        <div class="field">
+          <h4 class="ui header">上传影片</h4>
+          <div class="field">
+            <label>影片名称</label>
+            <input placeholder="影片名称" type="text" name="videoName">
+          </div>
+          <div class="field">
+            <label>文件</label>
+            <input placeholder="影片名称" type="text" name="videoName">
+          </div>
+          <br>
+          <div class="ui green submit button">Submit</div>
+        </div>
+      </div>
+    </form>
+    <div class="ui bottom attached warning message" style="margin-bottom:0px;border-radius:0px;"><i class="icon help"></i> 遇到问题? <a href="#">查看帮助</a> . </div>
     <div id="status"></div>
     <img id="image-result" hidden>
+
+    <script src="assets/scripts/jquery-1.11.2.min.js"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
+    <script src="global.js"></script>
+    <!-- <script src="popup.js"></script> -->
   </body>
 </html>
 
