@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Dont Know Video</title>
+    <link rel="stylesheet" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/global.min.css">
+  </head>
+  <body>
+    <div class="ui attached message">
+      <div class="header"><a href="popup.html"><i class="long arrow left icon"></i> </a>查看足迹</div>
+      <p>您一共浏览了<span id="count">0</span>部影视短片</p>
+    </div>
+    <div class="ui inline cookie nag" style="background:rgba(0,0,0,0.5)">
+      <span class="title">We use cookies to ensure you get the best experience on our website </span>
+      <i class="close icon"></i>
+    </div>
+    <table class="cus-table" style="width:100%;">
+      <thead style="font-weight:bold">
+        <tr>
+        <td>Name</td><td>Count</td>
+      </tr>
+      </thead>
+      <tbody id="cus-table-body">
+        
+      </tbody>
+    </table>
+    <!-- <div id="container"></div> -->
+    <div class="ui bottom attached warning message" style="margin-bottom:0px;border-radius:0px;"><i class="icon help"></i> 遇到问题? <a href="help.html">查看帮助</a> . </div>
+    <div id="status"></div>
+    <img id="image-result" hidden>
+
+    <script src="assets/scripts/jquery-1.11.2.min.js"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
+    <script src="history.js"></script>
+  </body>
+</html>
+
