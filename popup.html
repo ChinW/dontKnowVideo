@@ -28,9 +28,9 @@
       <div class="field">
         <h4 class="ui header">已经探索 1,048部</h4>
         <div class="ui buttons">
-          <button class="ui button red basic">清除</button>
+          <button class="ui button">清除足迹</button>
           <div class="or"></div>
-          <button class="ui button green basic">查看足迹</button>
+          <button class="ui positive button">查看足迹</button>
         </div>
       </div>
       </div>
@@ -44,11 +44,17 @@
             <input placeholder="影片名称" type="text" name="videoName">
           </div>
           <div class="field">
-            <label>文件</label>
-            <input placeholder="影片名称" type="text" name="videoName">
-          </div>
+            <label>文件(.MP4/.GIF)</label>
+            <div class="ui action input">
+                <input type="text" id="_attachmentName">
+                <label for="attachmentName" class="ui icon button btn-file">
+                     <i class="attach basic icon"></i>
+                     <input type="file" id="attachmentName" name="attachmentName" style="display: none">
+                </label>
+            </div>
+          </div>       
           <br>
-          <div class="ui green submit button">Submit</div>
+          <div class="ui green submit button basic">提交 </div>
         </div>
       </div>
     </form>
