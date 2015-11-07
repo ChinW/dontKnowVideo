@@ -15,19 +15,23 @@
       <div class="header">Dont Know Video</div>
       <p>让您在搜索影视资源时更加有趣</p>
     </div>
+    <div class="ui inline cookie nag" style="background:rgba(0,0,0,0.5)">
+      <span class="title">We use cookies to ensure you get the best experience on our website </span>
+      <i class="close icon"></i>
+    </div>
     <form action="" class="ui form attached fluid segment">
       <div class="fields">
         <div class="field">
-          <div class="ui toggle checkbox checked">
-            <input type="checkbox" name="name" tabindex="0" class="hidden">
+          <div class="ui toggle checkbox"  id="repeat-checkbox">
+            <input type="checkbox" name="name" tabindex="0" class="hidden" id="repeat-background">
             <label>每次搜索重复显示视频</label>
           </div>
         </div>
       </div>
       <div class="fields">
         <div class="field">
-          <div class="ui toggle checkbox checked">
-            <input type="checkbox" name="background" id="switch-background" tabindex="0" class="hidden">
+          <div class="ui toggle checkbox" id="videoMode-checkbox">
+            <input type="checkbox" name="background" tabindex="0" class="hidden" id="switch-background" >
             <label>背景显示／覆盖显示</label>
           </div>
         </div>

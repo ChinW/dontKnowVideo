@@ -16,7 +16,8 @@
     "tabs",
     "webRequest",
     "background",
-    "*://www.baidu.com/"
+    "*://www.baidu.com/",
+    "storage"
   ],
   "content_scripts": [
     {

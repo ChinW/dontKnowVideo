@@ -64,7 +64,7 @@ var eventTester = function(e){
  	$("#suspend").remove()
  },false);
 }
-var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4"};
+var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4"};
 var mode =2;//2
 console.log(allowWords);
 console.log(allowWords["legalhigh"])
