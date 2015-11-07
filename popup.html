@@ -15,7 +15,7 @@
       <div class="header">Dont Know Video</div>
       <p>让您在搜索影视资源时更加有趣</p>
     </div>
-    <div class="ui inline cookie nag" style="background:rgba(0,0,0,0.5)">
+    <div class="ui inline cookie nag" style="background:rgba(0,0,0,0.5);color:#fff">
       <span class="title">We use cookies to ensure you get the best experience on our website </span>
       <i class="close icon"></i>
     </div>
@@ -37,15 +37,15 @@
         </div>
       </div>
       <div class="field">
-        <h4 class="ui header">已经探索 1,048部</h4>
+        <h4 class="ui header">已经探索 <span id="count">0</span>部</h4>
         <div class="ui buttons">
-          <button class="ui red button">清除足迹</button>
+          <button class="ui red button" id="cleanHistory" type="button">清除足迹</button>
           <div class="or"></div>
-          <button class="ui positive button">查看足迹</button>
+          <a class="ui positive button" id="getSteps" href="history.html">查看足迹</a>
         </div>
       </div>
     </form>
-    <form class="ui form attached fluid segment">
+    <form class="ui form attached fluid segment" >
       <div class="two fields">
         <div class="field">
           <h4 class="ui header">上传影片</h4>
@@ -64,17 +64,18 @@
             </div>
           </div>       
           <br>
-          <div class="ui green submit button basic">提交 </div>
+          <div class="ui green submit button basic" id="submitMP4">提交</div>
         </div>
       </div>
     </form>
     <!-- <div id="container"></div> -->
-    <div class="ui bottom attached warning message" style="margin-bottom:0px;border-radius:0px;"><i class="icon help"></i> 遇到问题? <a href="#">查看帮助</a> . </div>
+    <div class="ui bottom attached warning message" style="margin-bottom:0px;border-radius:0px;"><i class="icon help"></i> 遇到问题? <a href="help.html">查看帮助</a> . </div>
     <div id="status"></div>
     <img id="image-result" hidden>
 
     <script src="assets/scripts/jquery-1.11.2.min.js"></script>
     <script src="assets/semantic/semantic.min.js"></script>
+    <script src="assets/scripts/ajaxfileupload.min.js"></script>
     <script src="global.js"></script>
     <!-- <script src="popup.js"></script> -->
   </body>

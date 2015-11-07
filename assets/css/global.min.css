@@ -32,3 +32,14 @@
   height: 100vh;
   opacity: 0.5;
 }
+
+.cus-table {
+  width: 100%;
+  text-align: center;
+}
+.cus-table tr {
+  border-bottom: 1px solid #eee;
+}
+.cus-table tr td {
+  padding: 0.5rem 1.5rem;
+}

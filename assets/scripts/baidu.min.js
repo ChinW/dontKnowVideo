@@ -60,7 +60,7 @@
 // });
 // 
 // 
-var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4"};
+var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4","午夜凶铃":"wyxl.mp4","奇幻森林":"jungle.mp4"};
 var mode = 1;//1:background 显示 2:覆盖显示
 
 function getVideoMode(){
@@ -106,7 +106,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 								console.log("nnnn");
 								videoMode();
 								//添加到steps
-								saveSteps({last:"1"});
+								var arr = {};
+								arr[last] = 1;
+								saveSteps(arr);
 							}else{
 								steps = eval("(" + steps + ")"); //tranform to json
 								console.log(steps);

@@ -34,3 +34,13 @@
 		opacity:0.5
 	}
 }
+.cus-table{
+	width:100%;
+	text-align:center;
+	tr{
+		td{
+			padding:0.5rem 1.5rem;
+		}
+		border-bottom: 1px solid #eee;
+	}
+}
