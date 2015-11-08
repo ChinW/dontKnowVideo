@@ -43,7 +43,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 					if(repeatMode){//选择了重复模式
 						chrome.storage.local.get("steps",function(result){
 							var steps = result.steps;
-							if(steps === undefined ){
+							if(steps === undefined || steps == ""){
 								steps = {}
 							}else{
 								steps = eval("(" + steps + ")"); //tranform to json
