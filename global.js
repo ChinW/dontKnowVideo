@@ -22,7 +22,7 @@ function saveRepeatModeChanges() {
     }
     chrome.storage.local.set({'repeatMode': theValue}, function() {
       // 通知保存完成。
-      $("#status").html("设置已经保存:"+theValue);
+      // $("#status").html("设置已经保存:"+theValue);
     });
 }
 
@@ -39,10 +39,13 @@ function cleanHistory(){
 function historyCount(){
   chrome.storage.local.get('steps', function (result) {
       var history = result.steps;
-      history = eval("(" + history + ")");
-      console.log(history);
-      if(history === undefined)
-        history = {};
+      // console.log(history); 
+      if(history === undefined || history == ""){
+        history={}
+      }else{
+        history = eval("(" + history + ")");
+      }
+      // console.log(history);
       $("#count").html(Object.keys(history).length);
   });
 }
@@ -110,7 +113,7 @@ $(function(){
 	$('.ui.checkbox').checkbox();
 	
 	$("#switch-background").bind("change",function(){
-		$("#status").html(1);
+		// $("#status").html(1);
 		saveVideoModeChanges();
 	});
 
@@ -127,7 +130,7 @@ $(function(){
 	chrome.storage.local.get('videoMode', function (result) {
         videoMode = result.videoMode;
         if(videoMode){
-         	$("#status").html("videoMode2:"+videoMode);
+         	// $("#status").html("videoMode2:"+videoMode);
         	$("#videoMode-checkbox").checkbox('check');
         }
     });
@@ -135,7 +138,7 @@ $(function(){
     chrome.storage.local.get('repeatMode', function (result) {
         repeatMode = result.repeatMode;
         if(repeatMode){
-         	$("#status").html("repeatMode:"+repeatMode);
+         	// $("#status").html("repeatMode:"+repeatMode);
         	$("#repeatMode-checkbox").checkbox('check');
         }
     });

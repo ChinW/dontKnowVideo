@@ -41,6 +41,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 				chrome.storage.local.get('repeatMode', function (result) { //获取重复模式
 					var repeatMode = result.repeatMode;
 					if(repeatMode){//选择了重复模式
+						chrome.storage.local.get("steps",function(result){
+							var steps = result.steps;
+							if(steps === undefined ){
+								steps = {}
+							}else{
+								steps = eval("(" + steps + ")"); //tranform to json
+							}
+							if(steps[last] === undefined){
+								steps[last] = 1;
+							}else{
+								steps[last]++;
+							}
+							saveSteps(steps);
+						});
 						videoMode();
 					}else{//不重复，搜索历史
 						chrome.storage.local.get("steps",function(result){
@@ -64,6 +78,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 									steps[last] = 1;
 									console.log(steps);
 									saveSteps(steps);
+								}else{//存在关键词
+									
 								}
 							}
 
