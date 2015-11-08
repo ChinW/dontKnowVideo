@@ -5,7 +5,8 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 		if (wd) {
 			kw = decodeURI(wd[1]);
 		}
-		chrome.tabs.sendMessage(tabId, { keyword: kw }, function (response) {});
+		chrome.tabs.sendMessage(tabId, { keyword: kw }, function (response) {
+		});
 	}
 });
 

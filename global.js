@@ -92,7 +92,7 @@ $("#submitMP4").click(function(){
     chrome.storage.local.get('list', function (result) {
         var list = result.list;
         if(list === undefined){
-          list = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4","午夜凶铃":"wyxl.mp4","奇幻森林":"jungle.mp4","敲门":"yonimo_r.mp4"};
+          list = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4","午夜凶铃":"wyxl.mp4","奇幻森林":"jungle.mp4","敲门":"yonimo_r.mp4","github":"github.mp4"};
         }else{
            list = eval("("+list+")");
         }

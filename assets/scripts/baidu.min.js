@@ -1,4 +1,4 @@
-var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4","午夜凶铃":"wyxl.mp4","奇幻森林":"jungle.mp4","敲门":"yonimo_r.mp4"};
+var allowWords = {"干物妹小埋":"yonimo.mp4","legalhigh":"legalhigh.mp4","傲慢与偏见":"pnp.mp4","silicon":"silicon.mp4","equus":"equus.mp4","午夜凶铃":"wyxl.mp4","奇幻森林":"jungle.mp4","敲门":"yonimo_r.mp4","github":"github.mp4"};
 
 var mode = 1;//1:background 显示 2:覆盖显示
 
@@ -95,6 +95,8 @@ function videoMode(){
         }else{
         	mode = 1;
         }
+        $("#BMV_BG").remove();
+        $("#suspend").remove();
         if(mode == 1){ // background 显示
 			$("body").prepend(
 				$("<div></div>").attr("id","BMV_BG").append(
